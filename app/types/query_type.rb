@@ -5,7 +5,7 @@ QueryType = GraphQL::ObjectType.define do
   field :movies do
     type types[MovieType]
     argument :year, types.Int
-    resolve -> (obj, args, ctx) {
+    resolve ->(_obj, args, _ctx) {
       if args[:year].present?
         Movie.where(year: args[:year])
       else

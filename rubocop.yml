@@ -1,0 +1,40 @@
+require: rubocop-rspec
+AllCops:
+  Exclude:
+    - config/puma.rb
+    - bin/**/*
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - vendor/**/*
+    - spec/*_helper.rb
+    - !ruby/regexp /old_and_unused\.rb$/
+    - Guardfile
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Exclude:
+    - Rakefile
+    - config/**/*
+    - db/schema.rb
+Metrics/MethodLength:
+  Max: 20
+Metrics/BlockLength:
+  Exclude:
+    - Rakefile
+    - '**/*.rake'
+    - spec/**/*_spec.rb
+    - db/schema.rb
+Metrics/AbcSize:
+  Exclude:
+    - app/controllers/**/*
+Metrics/ClassLength:
+  Exclude:
+    - app/concepts/**/*
+    - app/models/**/*
+Style/ClassAndModuleChildren:
+  Enabled: false
+LambdaCall:
+  EnforcedStyle: braces
